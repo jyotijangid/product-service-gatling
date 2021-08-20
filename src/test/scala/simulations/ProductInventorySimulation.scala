@@ -3,7 +3,7 @@ package simulations
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-class ProductSimulation extends Simulation {
+class ProductInventorySimulation extends Simulation {
 
   //conf
   val value_conf = http.baseUrl("http://localhost:8081")
@@ -12,27 +12,27 @@ class ProductSimulation extends Simulation {
 
 
   //scenario
-  val scn = scenario("Get all Products")
-    .exec(http("get all product details")
-      .get("rvy/api/pms/v1/products")
+  val scn = scenario("Get all Product Inventory")
+    .exec(http("get all Product Inventory details")
+      .get("/rvy/api/pis/v1/product")
       .check(status is 200)
 
-     )
+    )
 	 
-    .exec(http("Get Product By Id")
-      .get("/rvy/api/pms/v1/product/2614")
+    .exec(http("Get Product Inventory By Id")
+      .get("/rvy/api/pis/v1/product/5720")
       .check(status is 200)
     )
 	
-	.exec(http("Post product")
-      .post("/rvy/api/pms/v1/product")
-      .body(RawFileBody(filePath = "./src/test/resources/bodies/addProduct.json")).asJson
+	.exec(http("Post Product Inventory")
+      .post("/rvy/api/pis/v1/product")
+      .body(RawFileBody(filePath = "./src/test/resources/bodies/addProductInventory.json")).asJson
       .header(name="content-type",value = "application/json")
       .check(status is 200))
 
-	.exec(http("Update product")
-      .post("/rvy/api/pms/v1/product")
-      .body(RawFileBody(filePath = "./src/test/resources/bodies/updateProduct.json")).asJson
+	.exec(http("Update Product Inventory")
+      .post("/rvy/api/pis/v1/product")
+      .body(RawFileBody(filePath = "./src/test/resources/bodies/updateProductInventory.json")).asJson
       .header(name="content-type",value = "application/json")
       .check(status is 200))
 

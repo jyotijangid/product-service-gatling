@@ -1,0 +1,23 @@
+{
+  "batchcode": "AZ",
+  "batchdate": "2021-01-20",
+  "buyingPrice": 100,
+  "inventoryId": 10,
+  "minimumSellingPrice": 200,
+  "product": {
+    "brand": "Apple",
+    "category": "Iphone",
+    "image": null,
+    "productDesc": {
+      "color": "Blue",
+      "size": "6 inch"
+    },
+    "productId": 200,
+    "productName": "Iphone 12",
+    "type": "Phone"
+  },
+  "quantity": 10,
+  "reorderLevel": 10,
+  "status": "Available",
+  "storeId": 20
+}
