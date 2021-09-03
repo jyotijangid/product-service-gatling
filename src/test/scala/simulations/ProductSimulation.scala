@@ -6,7 +6,7 @@ import io.gatling.http.Predef._
 class ProductSimulation extends Simulation {
 
   //conf
-  val value_conf = http.baseUrl("http://localhost:9293")
+  val value_conf = http.baseUrl("http://localhost:9004")
     .header("Accept",value="application/json")
     .header(name="content-type", value ="application/json")
 
@@ -20,7 +20,7 @@ class ProductSimulation extends Simulation {
      )
 	 
     .exec(http("Get Product By Id")
-      .get("/pms/v1/product/167290")
+      .get("/pms/v1/product/1")
       .check(status is 200)
     )
 	
