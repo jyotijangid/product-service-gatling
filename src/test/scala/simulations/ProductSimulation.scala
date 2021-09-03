@@ -28,10 +28,10 @@ class ProductSimulation extends Simulation {
       .post("/pms/v1/product")
       .body(RawFileBody(filePath = "./src/test/resources/bodies/addProduct.json")).asJson
       .header(name="content-type",value = "application/json")
-      .check(status is 200))
+      .check(status is 201))
 
 	.exec(http("Update product")
-      .post("/pms/v1/product")
+      .put("/pms/v1/product")
       .body(RawFileBody(filePath = "./src/test/resources/bodies/updateProduct.json")).asJson
       .header(name="content-type",value = "application/json")
       .check(status is 200))
