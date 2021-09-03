@@ -20,7 +20,7 @@ class ProductSimulation extends Simulation {
      )
 	 
     .exec(http("Get Product By Id")
-      .get("/pms/v1/product/1")
+      .get("/pms/v1/product/3")
       .check(status is 200)
     )
 	
