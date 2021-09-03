@@ -40,7 +40,7 @@ class ProductSimulation extends Simulation {
 
   //setup
 //   setUp(scn.inject(atOnceUsers(users=100))).protocols(value_conf)
-	setUp(scn.inject(constantConcurrentUsers(50) during(3))).protocols(value_conf)
+	setUp(scn.inject(constantConcurrentUsers(250) during(10))).protocols(value_conf)
 
 
 
