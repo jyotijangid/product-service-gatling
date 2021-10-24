@@ -32,6 +32,9 @@
       <version>${gatling.version}</version>
     </dependency>
   </dependencies>
+         
+         
+<!--    -->
 
   <build>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
